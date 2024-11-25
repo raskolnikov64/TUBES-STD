@@ -1,0 +1,3 @@
+D:/Kuliah/UTS-STD/TUBES-STD/cmake-build-debug/CMakeFiles/TUBES_STD.dir
+D:/Kuliah/UTS-STD/TUBES-STD/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Kuliah/UTS-STD/TUBES-STD/cmake-build-debug/CMakeFiles/rebuild_cache.dir
