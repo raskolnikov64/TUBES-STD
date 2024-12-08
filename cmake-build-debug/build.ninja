@@ -73,6 +73,12 @@ build CMakeFiles/TUBES_STD.dir/funcspasien.cpp.obj: CXX_COMPILER__TUBES_STD_Debu
   OBJECT_DIR = CMakeFiles\TUBES_STD.dir
   OBJECT_FILE_DIR = CMakeFiles\TUBES_STD.dir
 
+build CMakeFiles/TUBES_STD.dir/interface.cpp.obj: CXX_COMPILER__TUBES_STD_Debug D$:/Kuliah/UTS-STD/TUBES-STD/interface.cpp || cmake_object_order_depends_target_TUBES_STD
+  DEP_FILE = CMakeFiles\TUBES_STD.dir\interface.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\TUBES_STD.dir
+  OBJECT_FILE_DIR = CMakeFiles\TUBES_STD.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target TUBES_STD
@@ -81,7 +87,7 @@ build CMakeFiles/TUBES_STD.dir/funcspasien.cpp.obj: CXX_COMPILER__TUBES_STD_Debu
 #############################################
 # Link the executable TUBES_STD.exe
 
-build TUBES_STD.exe: CXX_EXECUTABLE_LINKER__TUBES_STD_Debug CMakeFiles/TUBES_STD.dir/main.cpp.obj CMakeFiles/TUBES_STD.dir/funcsdokter.cpp.obj CMakeFiles/TUBES_STD.dir/funcsrelasi.cpp.obj CMakeFiles/TUBES_STD.dir/funcspasien.cpp.obj
+build TUBES_STD.exe: CXX_EXECUTABLE_LINKER__TUBES_STD_Debug CMakeFiles/TUBES_STD.dir/main.cpp.obj CMakeFiles/TUBES_STD.dir/funcsdokter.cpp.obj CMakeFiles/TUBES_STD.dir/funcsrelasi.cpp.obj CMakeFiles/TUBES_STD.dir/funcspasien.cpp.obj CMakeFiles/TUBES_STD.dir/interface.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\TUBES_STD.dir

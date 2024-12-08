@@ -3,4 +3,4 @@ project(TUBES_STD)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(TUBES_STD main.cpp TUBES.h funcsdokter.cpp funcsrelasi.cpp funcspasien.cpp)
+add_executable(TUBES_STD main.cpp TUBES.h funcsdokter.cpp funcsrelasi.cpp funcspasien.cpp interface.cpp)

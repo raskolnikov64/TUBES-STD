@@ -4,7 +4,7 @@
 
 #ifndef TUBES_STD_TUBES_H
 #define TUBES_STD_TUBES_H
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 typedef struct NodeDokter * adrDokter;
@@ -74,6 +74,7 @@ void deleteLastDokter(ListDokter &L);
 void deleteAfterDokter(ListDokter &L, adrDokter prec);
 void displayDLL(ListDokter L);
 
+
 //SLL Pasien
 void insertFirstPasien(ListPasien &L, adrPasien p);
 void insertLastPasien(ListPasien &L, adrPasien p);
@@ -92,6 +93,11 @@ void deleteFirstRelasi(ListRelasi &L);
 void deleteLastRelasi(ListRelasi &L);
 void deleteAfterRelasi(ListRelasi &L, adrRelasi prec);
 void displaySLLRelasi(ListRelasi L);
+//Buat function yang berfungsi untuk menghubungkan dokter dengan pasien
+void connectDokterToPasien(ListRelasi &L, adrDokter d, adrPasien p);
+adrDokter searchNodeRelasiForDokter(ListRelasi L, string namaDokter);
+adrPasien searchNodeRelasiForPasien(ListRelasi L, string namaPasien);
+adrRelasi searchForEmptyRelasi(ListRelasi L); //building blocks untuk prosedur connectDokterToPasien
 
 //Bersifat temporary 😁😁😁
 

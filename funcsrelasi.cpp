@@ -102,3 +102,65 @@ void displaySLLRelasi(ListRelasi L){
         }
     }
 }
+
+adrDokter searchNodeRelasiForDokter(ListRelasi L, string namaDokter){
+    if(L.head == NULL){
+        cout << "Can't do search on list relasi as its empty!" << "\n";
+        return NULL;
+    } else if(L.head->nextRelasiToDokter->info.namaDokter == namaDokter) {
+        return L.head->nextRelasiToDokter;
+    } else {
+        adrRelasi k = L.head;
+        while(k != NULL){
+            if(k->nextRelasiToDokter->info.namaDokter == namaDokter){
+                return k->nextRelasiToDokter;
+            }
+            k = k->next;
+        }
+    }
+    return NULL;
+}
+
+adrPasien searchNodeRelasiForPasien(ListRelasi L, string namaPasien){
+    if(L.head == NULL){
+        cout << "Can't do search on list relasi as its empty!" << "\n";
+        return NULL;
+    } else if(L.head->nextRelasiToPasien->info.namaPasien == namaPasien) {
+        return L.head->nextRelasiToPasien;
+    } else {
+        adrRelasi k = L.head;
+        while(k != NULL){
+            if(k->nextRelasiToPasien->info.namaPasien == namaPasien){
+                return k->nextRelasiToPasien;
+            }
+            k = k->next;
+        }
+    }
+    return NULL;
+}
+
+void connectDokterToPasien(ListRelasi &L, adrDokter d, adrPasien p){
+    //asumsikan jika list relasi tidak kosong.
+    //cara kerjanya ialah, fungsi akan mencari node yang kosong untuk menghubungkan antara dokter dengan pasien sesuai dengan spesialisasi dokter dan penyakit pasien
+    adrRelasi k = searchForEmptyRelasi(L);
+    k->nextRelasiToPasien = p;
+    k->nextRelasiToDokter = d;
+}
+
+adrRelasi searchForEmptyRelasi(ListRelasi L){
+    if(L.head == NULL){
+        cout << "Can't do search for empty relasi as list relasi is empty!" << "\n";
+        return NULL;
+    } else if(L.head->nextRelasiToPasien == NULL && L.head->nextRelasiToDokter == NULL){
+        return L.head;
+    } else {
+        adrRelasi k = L.head;
+        while(k->nextRelasiToDokter != NULL && k->nextRelasiToPasien != NULL){
+            if(k->nextRelasiToDokter == NULL && k->nextRelasiToPasien == NULL){
+                return k;
+            }
+            k = k->next;
+        }
+    }
+    return NULL;
+}

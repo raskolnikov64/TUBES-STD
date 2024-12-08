@@ -18,7 +18,7 @@ void newListDokter(ListDokter &L){
 }
 
 void insertFirstDokter(ListDokter &L, adrDokter d){
-    if(L.head == L.tail){
+    if(L.head == NULL){
         L.head = d;
         L.tail = d;
     } else {
@@ -28,9 +28,10 @@ void insertFirstDokter(ListDokter &L, adrDokter d){
 }
 
 void insertLastDokter(ListDokter &L, adrDokter d){
-    if(L.head == L.tail){
+    if(L.head == NULL){
         L.tail = d;
         L.head = d;
+
     } else {
         L.tail->next = d;
         d->prev = L.tail;
@@ -39,7 +40,7 @@ void insertLastDokter(ListDokter &L, adrDokter d){
 }
 
 void insertAfterDokter(ListDokter &L, adrDokter prec, adrDokter d){
-    if(L.head == L.tail){
+    if(L.head == NULL){
         L.head = d;
         L.tail = d;
     } else if(prec == L.tail) {
@@ -96,12 +97,12 @@ void deleteAfterDokter(ListDokter &L, adrDokter prec){
 
 
 void displayDLL(ListDokter L){
-    adrDokter p = L.head;
-    if(p == NULL){
+    if(L.head == NULL || L.tail == NULL){
         cout << "Cannot display as List is empty" << "\n";
     } else {
+        adrDokter p = L.head;
         while(p != NULL){
-            cout << p->info.namaDokter << " ";
+            cout << p->info.namaDokter << " " << p->info.idDokter << " " << p->info.spesialisasi << "\n";
             p = p->next;
         }
     }

@@ -95,9 +95,8 @@ void displaySLLPasien(ListPasien L){
     } else {
         adrPasien k = L.head;
         while(k != NULL){
-            cout << k->info.namaPasien << " ";
+            cout << k->info.namaPasien << "\n";
             k = k->next;
         }
-        cout << "\n";
     }
 }
