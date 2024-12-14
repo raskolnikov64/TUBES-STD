@@ -31,11 +31,12 @@ void insertLastDokter(ListDokter &L, adrDokter d){
     if(L.head == NULL){
         L.tail = d;
         L.head = d;
-
+        cout << "Data Dokter berhasil dimasukkan!\n";
     } else {
         L.tail->next = d;
         d->prev = L.tail;
         L.tail = d;
+        cout << "Data Dokter berhasil dimasukkan!\n";
     }
 }
 
@@ -106,4 +107,21 @@ void displayDLL(ListDokter L){
             p = p->next;
         }
     }
+}
+
+adrDokter findDokter(ListDokter L, string id){
+    if(L.head == NULL){
+        cout << "Can't find dokter as list dokter is empty!" << "\n";
+    } else if (L.head->info.idDokter == id){
+        return L.head;
+    } else {
+        adrDokter ok = L.head;
+        while(ok != NULL){
+            if(ok->info.idDokter == id){
+                return ok;
+            }
+            ok = ok->next;
+        }
+    }
+    return NULL;
 }

@@ -139,6 +139,25 @@ adrPasien searchNodeRelasiForPasien(ListRelasi L, string namaPasien){
     return NULL;
 }
 
+adrRelasi searchDokterHandle(ListRelasi L, string idDokter, string idPasien){
+    if(L.head->nextRelasiToDokter->info.idDokter == idDokter && L.head->nextRelasiToPasien->info.idPasien == idPasien){
+        return L.head;
+    } else if(L.head == NULL){
+        return NULL;
+    } else {
+        adrRelasi rrr = L.head;
+        while(rrr != NULL){
+            if(rrr->nextRelasiToDokter->info.idDokter == idDokter && rrr->nextRelasiToPasien->info.idPasien == idPasien){
+                return rrr;
+            }
+            rrr = rrr->next;
+        }
+    }
+    return NULL;
+}
+
+
+/*
 void connectDokterToPasien(ListRelasi &L, adrDokter d, adrPasien p){
     //asumsikan jika list relasi tidak kosong.
     //cara kerjanya ialah, fungsi akan mencari node yang kosong untuk menghubungkan antara dokter dengan pasien sesuai dengan spesialisasi dokter dan penyakit pasien
@@ -146,7 +165,8 @@ void connectDokterToPasien(ListRelasi &L, adrDokter d, adrPasien p){
     k->nextRelasiToPasien = p;
     k->nextRelasiToDokter = d;
 }
-
+ */
+/*
 adrRelasi searchForEmptyRelasi(ListRelasi L){
     if(L.head == NULL){
         cout << "Can't do search for empty relasi as list relasi is empty!" << "\n";
@@ -163,4 +183,4 @@ adrRelasi searchForEmptyRelasi(ListRelasi L){
         }
     }
     return NULL;
-}
+}*/

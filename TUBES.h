@@ -22,6 +22,7 @@ struct dataPasien{
     string namaPasien;
     int umur;
     string riwayatPenyakit;
+    string penyakit;
     string alergi;
 };
 
@@ -73,6 +74,7 @@ void deleteFirstDokter(ListDokter &L);
 void deleteLastDokter(ListDokter &L);
 void deleteAfterDokter(ListDokter &L, adrDokter prec);
 void displayDLL(ListDokter L);
+adrDokter findDokter(ListDokter L, string id);
 
 
 //SLL Pasien
@@ -83,6 +85,7 @@ void deleteFirstPasien(ListPasien &L);
 void deleteLastPasien(ListPasien &L);
 void deleteAfterPasien(ListPasien &L, adrPasien prec);
 void displaySLLPasien(ListPasien L);
+adrPasien findPasien(ListPasien L, string id);
 
 //SLL Relasi
 
@@ -98,7 +101,11 @@ void connectDokterToPasien(ListRelasi &L, adrDokter d, adrPasien p);
 adrDokter searchNodeRelasiForDokter(ListRelasi L, string namaDokter);
 adrPasien searchNodeRelasiForPasien(ListRelasi L, string namaPasien);
 adrRelasi searchForEmptyRelasi(ListRelasi L); //building blocks untuk prosedur connectDokterToPasien
-
+adrRelasi searchDokterHandle(ListRelasi L, string idDokter, string idPasien);
 //Bersifat temporary 😁😁😁
+
+//Interface
+void daftarPilihan();
+void cases(int choice, ListDokter D, ListPasien P, ListRelasi R);
 
 #endif //TUBES_STD_TUBES_H

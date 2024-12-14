@@ -2,7 +2,7 @@
 
 int main() {
 
-
+    //kode dibawah cuman buat testing function-functionnya, jangan dihapus
     /*
     ListDokter D;
     newListDokter(D);

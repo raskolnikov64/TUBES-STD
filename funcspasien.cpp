@@ -7,6 +7,7 @@ adrPasien newNodePasien(dataPasien z){
     p->info.namaPasien = z.namaPasien;
     p->info.umur = z.umur;
     p->info.riwayatPenyakit = z.riwayatPenyakit;
+    p->info.penyakit = z.penyakit;
     p->info.alergi = z.alergi;
     p->pasienDari = NULL;
     p->next = NULL;
@@ -29,12 +30,14 @@ void insertFirstPasien(ListPasien &L, adrPasien p){
 void insertLastPasien(ListPasien &L, adrPasien p){
     if(L.head == NULL){
         L.head = p;
+        cout << "Data pasien berhasil dimasukkan!\n";
     } else {
         adrPasien k = L.head;
         while(k->next != NULL){
             k = k->next;
         }
         k->next = p;
+        cout << "Data pasien berhasil dimasukkan!\n";
     }
 }
 
@@ -99,4 +102,21 @@ void displaySLLPasien(ListPasien L){
             k = k->next;
         }
     }
+}
+
+adrPasien findPasien(ListPasien L, string id){
+    if(L.head == NULL){
+        cout << "Can't find any pasien as list pasien is empty!" << "\n";
+    } else if(L.head->info.idPasien == id){
+        return L.head;
+    } else {
+        adrPasien aps = L.head;
+        while(aps != NULL){
+            if(aps->info.idPasien == id){
+                return aps;
+            }
+            aps = aps->next;
+        }
+    }
+    return NULL;
 }
